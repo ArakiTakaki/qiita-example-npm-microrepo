@@ -1,17 +1,27 @@
 {
   "name": "qiita-example-npm-microrepo",
+  "main": "dist/qiita-example-npm-microrepo.js",
+  "module": "dist/qiita-example-npm-microrepo.esm.js",
+  "types": "dist/@types/index.d.ts",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:ArakiTakaki/qiita-example-npm-microrepo.git",
   "author": "ArakiTakaki <araki_takaki@yahoo.co.jp>",
   "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c && yarn tsc --emitDeclarationOnly"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-typescript": "^4.1.2",
-    "rollup": "^2.12.0"
+    "rimraf": "^3.0.2",
+    "rollup": "^2.12.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.3"
   }
 }
